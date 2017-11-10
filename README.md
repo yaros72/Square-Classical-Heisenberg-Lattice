@@ -15,9 +15,12 @@ mkdir ssa.build && cd ssa.build
 cmake -DTRIQS_PATH=path_to_triqs ../ssa.src
 make
 ```
-This create executable file ./Square_Skyrmion_Annealing in ssa.build directory which generate result as 'magnetization.dat' file.
+path_to_triqs - directory of TRIQS library
 
-Square_Skyrmion_Annealing.py is simple python wrapper (See Documentation).
+This create executable file ./Square_Skyrmion_Annealing in ssa.build directory.
+./Square_Skyrmion_Annealing generate result as 'magnetization.dat' file.
+
+'Square_Skyrmion_Annealing.py' is simple python wrapper (See Documentation).
 
 ## Documentation
 
