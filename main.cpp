@@ -81,10 +81,10 @@ struct flip {
         for (auto &nn:nns) {
             delta_energy += config->J * sum(config->lattice(nn.i, nn.j, range()) * (config->lattice(s.i, s.j, range()) - spin));
             if((nn.i==s.i)&&(nn.j<s.j))delta_energy+=config->D*((config->lattice(s.i, s.j, 1)-spin(1))*config->lattice(nn.i,nn.j,2)-(config->lattice(s.i, s.j, 2)-spin(2))*config->lattice(nn.i,nn.j,1));
-            if((nn.j==s.j)&&(nn.i<s.i))delta_energy+=config->D*((config->lattice(s.i, s.j, 0)-spin(0))*config->lattice(nn.i,nn.j,2)-(config->lattice(s.i, s.j, 2)-spin(2))*config->lattice(nn.i,nn.j,0));
+            if((nn.j==s.j)&&(nn.i<s.i))delta_energy-=config->D*((config->lattice(s.i, s.j, 0)-spin(0))*config->lattice(nn.i,nn.j,2)-(config->lattice(s.i, s.j, 2)-spin(2))*config->lattice(nn.i,nn.j,0));
         }
         delta_energy += config->K * (config->lattice(s.i, s.j, 2) * config->lattice(s.i, s.j, 2) - spin(2) * spin(2));
-        delta_energy += config->B * (config->lattice(s.i, s.j, 2) - spin(2));
+        delta_energy -= config->B * (config->lattice(s.i, s.j, 2) - spin(2));
 
         // return Metroplis ratio
         return std::exp(-config->beta * delta_energy);
