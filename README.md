@@ -10,12 +10,14 @@ https://triqs.ipht.cnrs.fr/1.x/index.html
 ## Installation
 
 ```
-cmake -DTRIQS_PATH=path_to_triqs
+git clone https://github.com/yaros72/Square-Skyrmion-Annealing.git ssa.src
+mkdir ssa.build && cd ssa.build 
+cmake -DTRIQS_PATH=path_to_triqs ../ssa.src
 make
 ```
-This create executable file ./Square_Skyrmion_Annealing which generate result as 'magnetization.dat' file.
+This create executable file ./Square_Skyrmion_Annealing in ssa.build directory which generate result as 'magnetization.dat' file.
 
-Square_Skyrmion_Annealing.py file have simple python wrapper.
+Square_Skyrmion_Annealing.py is simple python wrapper (See Documentation).
 
 ## Documentation
 
